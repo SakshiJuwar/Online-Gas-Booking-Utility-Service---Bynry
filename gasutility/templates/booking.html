@@ -1,0 +1,68 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+
+<!-- Section Strat-->
+<div class="row mt-5">
+    <div class="col-md-8 mx-auto shadow pt-2 mt-3" style="border-radius: 20px;">
+
+        <h3 class="text-center">Booking Cylinder</h3>
+        <hr>
+
+        {% if errmsg %}
+        <div class="alert alert-danger" role="alert">
+            {{errmsg}}
+        </div>
+        {% endif %}
+        {% if success %}
+        <div class="alert alert-success" role="alert">
+            {{success}}
+        </div>
+        {% endif %}
+        
+        
+        <form method="POST">
+            {% csrf_token %}
+            <div class="auto mt-3 pt-2">
+                Name
+                <input type="text" class="form-control" id="Input1" name="name" value="{{data.cname}}">
+            </div>
+            <div class="mb-3">
+                Email
+                <input type="email" class="form-control" id="Input2" name="email" value="{{data.cemail}}">
+            </div>
+            <div class="mb-3">
+                Mobile Number
+                <input type="number" class="form-control" id="Input3" name="mobile" value="{{data.cmobile}}">
+            </div>
+            <div class="mb-3">
+                Address
+                <input type="text" class="form-control" id="Input7" name="address" value="{{data.caddress}}">
+            </div>
+
+            <div class="dropdown mb-3">
+                <label for="Input5" class="form-label">Reffiling</label>&nbsp;&nbsp;&nbsp;
+                <select name="ref" placeholder="Select">
+                    <option value="5 - Rs.500">5 - Rs.500</option>
+                    <option value="10 - Rs.800">10 - Rs.800</option>
+                    <option value="15 - Rs.1000">15 - Rs.1000</option>
+                    <option value="20 - Rs.1500">20 - Rs.1500</option>
+                    <option value="25 - Rs.1800">25 - Rs.1800</option>
+                    <option value="30 - Rs.2000">30 - Rs.2000</option>
+                </select>
+            </div>
+
+            <div class="mb-3 text-center">
+                <input type="submit" value="Confirm Booking" class="btn btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <a href="/viewbooking">
+                    <button type="button" class="btn btn-outline-dark btn-light">View Booking</button>
+                </a>
+            </div>
+        </form>
+
+        
+    </div>
+</div>
+{% endblock 'main' %}

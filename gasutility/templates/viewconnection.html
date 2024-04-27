@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+
+<div class="row mt-5">
+    <div class="col-md-12 mx-auto shadow pt-2 mt-3" style="border-radius: 20px;">
+
+     <center><b><h3>View Connections</h3></b></center>
+     <hr>
+     {% if success %}
+     <div class="alert alert-success" role="alert">
+         {{success}}
+     </div>
+     {% endif %}
+
+    <div style="text-align: right;">
+        <a href="/connection">
+            <button type="button" class="btn btn-outline-dark btn-light">Create New Connection</button>
+        </a>
+    </div><br>
+
+    <table class="table table-striped" border="1" align="center">
+        <tr style="background-color: rgba(79, 124, 156, 0.703);">
+            <th>Connection ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Gender</th>
+            <th>Marrital Status</th>
+            <th>Aadhar Card Number</th>
+            <th>Address</th>
+            <th>Pincode</th>
+            <th>DOB</th>
+            <th>Applied Date</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        {%for x in data %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{x.cname}}</td>
+            <td>{{x.cemail}}</td>
+            <td>{{x.cmobile}}</td>
+            <td>{{x.cgender}}</td>
+            <td>{{x.cstatus}}</td>
+            <td>{{x.caadhar}}</td>
+            <td>{{x.caddress}}</td>
+            <td>{{x.cpincode}}</td>
+            <td>{{x.cdob}}</td>
+            <td>{{x.cdate}}</td>
+
+            <td><a href="/edit/{{x.id}}"><i class="bi bi-pencil-square"></i></a></td>
+            <td><a href="/delete/{{x.id}}"><i class="bi bi-trash"></i></a></td>
+            <td><a href="/booking/{{x.id}}">
+                <button type="button" class="btn btn-danger" style="width: 2cm;">Book</button>
+            </a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+</div>
+
+{% endblock 'main' %}

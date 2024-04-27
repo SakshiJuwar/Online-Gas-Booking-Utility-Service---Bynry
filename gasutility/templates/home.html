@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'main' %}
+
+<div class="row mt-5 p-3">
+    
+    <div class="col-md-6 p-3" style="text-align: center;">
+        <h1 style="font-family: 'Times New Roman', Times, serif;"><b><i>Welcome</i></b></h1>
+        <h3 style="font-family: 'Times New Roman', Times, serif;"><b><i>To</i></b></h3>
+        <h1 style="font-family: 'Times New Roman', Times, serif;"><b><i>Online Gas Booking Service..!!</i></b></h1><br>
+
+        <h4 style="font-family: 'Times New Roman', Times, serif;">we are committed to providing you with convenient <br> and efficient gas booking services. With our online platform, <br> you can now book your gas cylinders from the comfort of your home or office, saving you time and hassle.</h4>
+    </div>
+    <div class="col-md-6" style="border-radius: 20%;">
+        <img src="{% static 'images/home2.jpg' %}" alt="Home Image" style="width: 700px; border-radius: 100px;">
+    </div>
+    <!--
+    <div class="col-md-12 mx-auto shadow pt-2 mt-3" style="background-image: url('{% static 'images/homeimg.webp' %}'); height: 500px; background-repeat: no-repeat; background-size: cover;">
+           <center><i><b><h1>Welcome to the Online Gas Booking Service</h1></b></i></center>
+     </div>
+     -->
+</div>
+{% endblock 'main' %}
+

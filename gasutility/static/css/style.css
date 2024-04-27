@@ -1,0 +1,19 @@
+.anchor{
+    text-decoration: none;
+}
+
+.bgcolor{
+    background-color: rgb(230, 249, 250);
+}
+
+.footcolor{
+    background-color: rgb(222, 216, 216);
+}
+
+.bgimg {
+    background-image: url("{% static 'images/homeimg.webp' %}");
+}
+#logo{
+    width: 20px;
+    height: 20px;
+}

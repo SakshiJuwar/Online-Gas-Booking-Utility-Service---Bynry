@@ -1,0 +1,83 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+
+<!-- Section Strat-->
+<div class="row mt-5">
+    <div class="col-md-8 mx-auto shadow pt-2 mt-3" style="border-radius: 20px;">
+
+        <h3 class="text-center">Create New Connection</h3>
+        <hr>
+        {% if errmsg %}
+        <div class="alert alert-danger" role="alert">
+            {{errmsg}}
+        </div>
+        {% endif %}
+        {% if success %}
+        <div class="alert alert-success" role="alert">
+            {{success}}
+        </div>
+        {% endif %}
+        
+        <form method="POST">
+            {% csrf_token %}
+            <div class="auto mt-3 pt-2">
+                <label for="Input1" class="form-label">Name*</label>
+                <input type="text" class="form-control" id="Input1" name="cname">
+            </div>
+            <div class="mb-3">
+                <label for="Input2" class="form-label">Email*</label>
+                <input type="email" class="form-control" id="Input2" name="cemail">
+            </div>
+            <div class="mb-3">
+                <label for="Input3" class="form-label">Mobile Number*</label>
+                <input type="number" class="form-control" id="Input3" name="cmobile">
+            </div>
+            
+            <div class="dropdown mb-3">
+                <label for="Input4" class="form-label">Gender*</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select name="cgender" aria-placeholder="Select Gender" style="width: 5cm;">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="dropdown mb-3">
+                <label for="Input5" class="form-label">Marrital Status*</label>&nbsp;&nbsp;
+                <select name="cstatus" aria-placeholder="Select Marrital Status" style="width: 5cm;">
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Widowed">Widowed</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="Input6" class="form-label">Aadhar Card Number</label>
+                <input type="number" class="form-control" id="Input6" name="caadhar">
+            </div>
+            <div class="mb-3">
+                <label for="Input7" class="form-label">Address*</label>
+                <input type="text" class="form-control" id="Input7" name="caddress">
+            </div>
+            <div class="mb-3">
+                <label for="Input8" class="form-label">Pincode*</label>
+                <input type="number" class="form-control" id="Input8" name="cpincode">
+            </div>
+            <div class="mb-3">
+                <label for="Input9" class="form-label">Date of Birth*</label>
+                <input type="date" class="form-control" id="Input9" name="cdob">
+            </div>
+
+            <div class="mb-3 text-center">
+                <input type="submit" value="Create Connection" class="btn btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/viewconnection">
+                    <button type="button" class="btn btn-outline-dark btn-light">View Connection</button>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock 'main' %}
